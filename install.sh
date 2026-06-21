@@ -22,3 +22,4 @@ echo "* * * * * root $SCRIPT_DIR/backup.sh" > /etc/cron.d/sys_backup
 chmod 644 /etc/cron.d/sys_backup
 systemctl restart cron
 echo "Đã thiết lập Cronjob."
+
