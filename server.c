@@ -52,13 +52,13 @@ int main() {
             float ram;
             char sys_status[512];
             
-            // LOGIC PHỨC TẠP: Cắt chuỗi để lấy thông số (Ví dụ: DATA|CPU:45|RAM:82.5)
+            
             if (sscanf(buffer, "DATA|CPU:%d|RAM:%f", &cpu, &ram) == 2) {
                 
                 sprintf(sys_status, "[PID: %d] Thu thap -> CPU: %d%%, RAM: %.1f%%\n", getpid(), cpu, ram);
-                write_log_low_level(sys_status); // Luôn ghi log mọi lúc
+                write_log_low_level(sys_status); 
                 
-                // RA QUYẾT ĐỊNH (Threshold Logic)
+                
                 if (ram > 80.0 || cpu > 90) {
                     char alert[512];
                     sprintf(alert, "[CRITICAL] CPU: %d%%, RAM: %.1f%% - Yeu cau can thiep!\n", cpu, ram);
